@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircleCountdownView">
+        <attr name="countdownBarWidth" format="dimension"/>
+        <attr name="countdownBarColor" format="color"/>
+        <attr name="mainColor" format="color"/>
+        <attr name="textColor" format="color"/>
+        <attr name="textSize" format="dimension"/>
+        <attr name="countdownTime" format="integer"/>
+    </declare-styleable>
+</resources>
