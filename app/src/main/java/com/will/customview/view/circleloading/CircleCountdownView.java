@@ -7,6 +7,8 @@ import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -78,7 +80,7 @@ public class CircleCountdownView extends FrameLayout {
          //the input time unit is second
          int countdownTime = ta.getInteger(R.styleable.CircleCountdownView_countdownTime,5) * 1000;
          int textColor = ta.getColor(R.styleable.CircleCountdownView_textColor,Color.WHITE);
-         int textSize = ta.getDimensionPixelSize(R.styleable.CircleCountdownView_textSize,Utils.Dp2Px(getContext(),15));
+         int textSize = ta.getDimensionPixelSize(R.styleable.CircleCountdownView_textSize,20);
          mTimer = new Timer(countdownTime,1000/FRAME_RATE_60);
          ta.recycle();
          initializeCircleView(mainColor,countdownBarColor,countdownBarWidth,countdownTime);
@@ -97,7 +99,7 @@ public class CircleCountdownView extends FrameLayout {
     private void initializeTextView(@ColorInt int textColor,int textSize,int countdownTime){
         textView = new TextView(getContext());
         textView.setTextColor(textColor);
-        textView.setTextSize(textSize);
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_PX,textSize);
         textView.setGravity(Gravity.CENTER);
         ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
         params.height = ViewGroup.LayoutParams.MATCH_PARENT;
@@ -109,6 +111,7 @@ public class CircleCountdownView extends FrameLayout {
                 textView.setText(String.valueOf(sec));
             }
         });
+        textView.setText(""+countdownTime/1000);
     }
     public interface OnCountdownFinishListener{
         void onFinish();

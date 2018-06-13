@@ -11,9 +11,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:countdownBarColor="@color/colorAccent"
-        app:mainColor="@color/colorPrimary"
         app:countdownBarWidth="2dp"
-        app:textColor="@android:color/white"
         app:countdownTime="5"
-        app:textSize="15sp"/>
+        app:mainColor="@color/colorPrimary"
+        app:textColor="@android:color/white"
+        app:textSize="30sp" />
+
 </android.support.constraint.ConstraintLayout>

@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         view.start();
         view.setCountdownFinishListener(new CircleCountdownView.OnCountdownFinishListener() {
             @Override
-            public void onFinish() { 
+            public void onFinish() {
                 Toast.makeText(MainActivity.this, "countdown finished!", Toast.LENGTH_SHORT).show();
             }
         });
